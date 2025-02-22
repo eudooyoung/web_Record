@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let x = 100 //전역변수 블록안에 있지 않음
+        y = 100 //전역변수
+        sum = 1000
+
+        if (x == y) {
+            total = 100 //전역, var or let이 안붙어서 블럭 안에서도 전역 변수로 저장됨
+            var sum = 200
+            let x = 999//지역변수 블럭 밖에서는 사용 불가
+            let x2 = 353
+
+            alert('total ' + total)
+            alert('sum ' + sum)
+            alert('x ' + x)
+            alert('y ' + y)
+        }
+
+        alert('total2 ' + total)
+        alert('sum2 ' + sum)//if 내의 sum 값 출력(전역변수)
+        alert('x2 ' + x)
+        alert('y2 ' + y)
+        alert('x2 ' + x2)//Uncaught ReferenceError: x2 is not defined
+
+    </script>
+</body>
+
+</html>

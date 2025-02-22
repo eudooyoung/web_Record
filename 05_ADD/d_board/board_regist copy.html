@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>댓글 등록</title>
+</head>
+
+<body>
+    <h1>댓글 등록</h1>
+
+    <div id="commentForm">
+        <h2>댓글</h2>
+        <div id="commentList">
+            <ul id="commentList"></ul>
+
+        </div>
+
+        <div id="commentPost">
+            <h3>댓글 작성</h3>
+            <form id="commentForm">
+                <textarea id="commentBody" required placeholder="댓글을 입력하세요" style="height:50px"></textarea><br>
+                <button type="submit">댓글 등록</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const currentUserId = localStorage.getItem('currentUserId') || 1;
+        const postId = new URLSearchParams(window.location.search).get('id');
+        document.getElementById('commentPost').addEventListener('submit', function (event) {
+            const body = document.getElementById('commentBody').value;
+            event.preventDefault();
+            fetch('http://localhost:3000/comments', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ postId, body, author: currentUserId })
+            })
+                .then(response => response.json())
+                .then(post => {
+                    console.log("댓글 추가 성공:", post);
+                    location.href = 'http://127.0.0.1:5500/d_board/board_list.html';
+                })
+                .catch(error => console.error("댓글 추가 실패:", error));
+        });
+
+
+    </script>
+</body>
+
+</html>

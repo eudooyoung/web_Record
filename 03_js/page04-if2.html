@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1. id, pw 입력하기
+        // 2. id가 root, pw가 1234면 로그인, 아니면 실패
+
+        // let id = prompt("id를 입력하세요")
+        // let pw = prompt("password를 입력하세요")
+
+        // if (id == "root" && pw == "1234") {
+        //     alert("로그인")
+        // } else {
+        //     alert("로그인실패")
+        // }
+
+        //1 사과구매금액 3000원, 배구매금액 2000원.
+        // 총 결제금액을 계산해주세요.
+        // 합계가 5000원을 초과하면 1000원을 빼서 4000원만계산
+        // 합계가 5000원 이하이면 5000원을 그냥계산
+        // 입력
+        // 처리
+        // 출력
+        {
+            let apple = 3000
+            let pear = 2000
+            let c_apple = parseInt(prompt("사과는 몇 개 구매하시나요?"))
+            let p_apple = apple * c_apple
+
+            let c_pear = parseInt(prompt("배는 몇 개 구매하시나요?"))
+            let p_pear = pear * parseInt(c_pear)
+
+            let total = p_apple + p_pear
+
+            if (total > 5000) {
+                alert(total - 1000)
+            } else {
+                alert(total)
+            }
+        }
+
+
+
+        // 2 감자 가격 2000, 양파 가격 1000
+        // 감자 가격이 3000원보다작거나 양파가격이 500원보다 크면
+        // 시장을간다, 아니면 시장을 안간다
+        // 입력
+        // gamja = 2000
+        // yangpa = 1000
+        // 처리
+        // 출력
+
+        {
+            let potato = 2000
+            let onion = 1000
+            let c_potato = prompt("감자는 몇 개 구매하시나요?")
+            let p_potato = potato * parseInt(c_potato)
+
+            let c_onion = prompt("양파는 몇 개 구매하시나요?")
+            let p_onion = onion * parseInt(c_onion)
+
+            if (p_potato < 3000 || p_onion > 500) {
+                alert("시장을 간다")
+            } else {
+                alert("시장을 안간다")
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>댓글</title>
+    <style>
+        #commentList {
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>댓글</h1>
+
+    <ul id="commentList"></ul>
+
+    <script>
+        const postId = new URLSearchParams(window.location.search).get('id');
+        localStorage.setItem('currentUserId', '1');
+        function loadComments() {
+            fetch('http://localhost:3000/comments')
+                .then(response => response.json())
+                .then(comments => {
+                    const commentList = document.getElementById('commentList');
+                    commentList.innerHTML = '';
+                    comments.forEach(comment => {
+                        if (comment.postId == postId) {
+                            const li = document.createElement('li');
+                            li.innerHTML = `${comment.body} (작성자 : ${comment.author})`;
+                            commentList.appendChild(li);
+                        }
+                    });
+                })
+                .catch(error => console.error("댓글 추가 실패:", error));
+        }
+        loadComments();
+
+
+    </script>
+</body>
+
+</html>
+
+
+
+<!-- json 이 존재하는 폴더에서 json-server --watch page28_board_db.json -->
+<!--json 이 존재하는 폴더에서  json-server --watch page28_board_db.json  -->

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script><!-- cdn -->
+    <script>
+        $(function () {
+
+            $('#b1').click(function () {
+                $.getJSON("https://place.map.kakao.com/27307026", function(result){
+                    console.log(result)
+                })
+                // $("#s1").load("https://place.map.kakao.com/27307026")
+
+
+                // $.ajax({
+                //     url: 'https://place.map.kakao.com/27307026' ,//내 로컬 서버
+                //     success: function (data) {
+                //         alert(data)
+                //         $('#d1').html('응답 받은 데이터는 ' + data)
+                //     },
+                //     error: function (err) {
+                //         alert('통신실패 ' + err)
+                //     }
+                // })
+
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <button id='b1'>내 서버 공공portal로 통신하기(tour)</button> <br>
+    <div id="s1"></div>
+</body>
+
+</html>

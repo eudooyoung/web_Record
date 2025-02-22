@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* CSS로 텍스트 스타일 정의 */
+        .highlight {
+            font-weight: bold;
+            color: red;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- querySelector는 HTML 문서에서 CSS 선택자를 사용해 원하는 요소를 선택할 수 있는 JavaScript 메서드
+         첫번째로 매칭되는 요소 하나만 선택, 없으면 null 반환
+         id, class, 태그 등 css 기본선택자를 사용
+
+         querySelectorAll: 여러 요소를 선택할 때 사용
+
+    -->
+    <h1 id="maintitle">querySelector 예제</h1>
+    <div class="box">
+        <p>이 문장은 <strong>박스</strong> 안에 있는 첫 번째 단락입니다.</p>
+        <p class="highlight">이 문장은 박스 안에 있는 강조된 단락입니다.</p>
+    </div>
+    <ul>
+        <li class="item">항목 1</li>
+        <li class="item highlight">항목 2</li>
+        <li class="item">항목 3</li>
+    </ul>
+    <button id="btn_style">강조 스타일 변경</button>
+    <script>
+        const mainTitle = document.querySelector('#maintitle')
+        const highlight = document.querySelector('.highlight')
+        const firstItem = document.querySelector('ul > li.item')
+        const items = document.querySelectorAll('ul > li.item')
+        
+        console.log(mainTitle)
+        console.log(highlight)
+        console.log(firstItem)
+        console.log(items)
+
+        document.querySelector('#btn_style').addEventListener('click', () => {
+            highlight.style.backgroundColor = 'red'; 
+            highlight.style.color = 'white'; 
+        });
+
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 배열, array
+        let names = ['홍길동', '제니', '리사', '사나']
+        alert(names.length) //배열의 개수
+
+        // 인덱스 값은 0부터 시작, 배열이름[index]
+        console.log('첫번째 : ' + names[0])
+        console.log('첫번째 : ' + names[4])// error: undefined
+
+        // for문으로 배열 값 출력
+
+        for (let i = 0; i < names.length; i++) {
+            console.log((i + 1) + '번째 : ' + names[i])
+        }
+
+        let jumsu = [100, 90, 88]
+
+        for (let i = 0; i < jumsu.length; i++) {
+            console.log((i + 1) + '번째 : ' + jumsu[i])
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

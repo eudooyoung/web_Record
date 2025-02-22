@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1-1 if문--------------------------------------------------------------------------------------------------------------
+        // {
+        //     let grade = new Array();
+
+        //     grade.push("손님");
+        //     grade.push("일반 회원");
+        //     grade.push("운영자");
+
+        //     let authority = new Array();
+
+        //     authority.push("글 읽기");
+        //     authority.push("글 쓰기");
+        //     authority.push("글 삭제");
+
+        //     let i = new Number(prompt("귀하의 등급을 입력하세요(손님: 1, 회원: 2, 운영자: 3)")) - 1;
+
+        //     if (i == 0) {
+        //         authority.splice(i + 1);
+        //         console.log(grade[i] + "의 경우 " + authority + " 가 가능합니다.");
+        //     } else if (i == 1) {
+        //         authority.splice(i + 1);
+        //         console.log(grade[i] + "의 경우 " + authority + " 가 가능합니다.");
+        //     } else if (i == 2) {
+        //         authority.splice(i + 1);
+        //         console.log(grade[i] + "의 경우 " + authority + " 가 가능합니다.");
+        //     }
+        // }
+        // 1-1 삼항연산자--------------------------------------------------------------------------------------------------------------
+        // {
+        //     let grade = new Array();
+
+        //     grade.push("손님");
+        //     grade.push("일반 회원");
+        //     grade.push("운영자");
+
+        //     let authority = new Array();
+
+        //     authority.push("글 읽기");
+        //     authority.push("글 쓰기");
+        //     authority.push("글 삭제");
+
+        //     let i = new Number(prompt("귀하의 등급을 입력하세요(손님: 1, 회원: 2, 운영자: 3)")) - 1;
+
+        //     (i == 0) ?
+        //         (
+        //             authority.splice(i + 1),
+        //             console.log(grade[i] + "의 경우 " + authority + " 가 가능합니다.")
+        //         )
+        //         : (i == 1) ?
+        //             (
+        //                 authority.splice(i + 1),
+        //                 console.log(grade[i] + "의 경우 " + authority + " 가 가능합니다.")
+        //             )
+        //             : (i == 2) ?
+        //                 (
+        //                     authority.splice(i + 1),
+        //                     console.log(grade[i] + "의 경우 " + authority + " 가 가능합니다.")
+        //                 )
+        //                 : {
+
+        //                 };
+
+        // }
+        // 1-2 switch문--------------------------------------------------------------------------------------------------------------
+        // {
+        //     let browser = prompt("사용하고 계신 브라우저를 입력해 주세요.(Edge: 1. Chrome: 2, Firefox: 3, Safari: 4, Opera: 5)");   // 'Chrome', 'Firefox' 등으로 변경해서 테스트
+        //     browser = parseInt(browser);
+
+        //     switch (browser) {
+        //         case 1: console.log("Edge를 사용하고 계시네요!");
+        //             break;
+        //         case 2: console.log("Chrome을 사용하고 계시네요!");
+        //             break;
+        //         case 3: console.log("Firefox를 사용하고 계시네요!");
+        //             break;
+        //         case 4: console.log("Safari를 사용하고 계시네요!");
+        //             break;
+        //         case 5: console.log("Opera를 사용하고 계시네요!");
+        //             break;
+        //         default: console.log("현재 페이지가 괜찮아 보이길 바랍니다!")
+        //     }
+        // }
+        // 1-3반복문--------------------------------------------------------------------------------------------------------------
+        {
+            let i = 0;
+            while (i < 10) {
+                console.log("number" + (i + 1));
+                i++;
+            }
+        }
+    </script>
+</body>
+
+</html>

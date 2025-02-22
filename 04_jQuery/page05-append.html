@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script><!-- cdn -->
+    <style>
+        img {
+            max-width: 200px;
+            display: block;
+            margin: 10px 0;
+        }
+    </style>
+    <script>
+        $(function () {
+            $('#addImage').click(function () {
+                $('#output').append('<img src="img/red.png">');
+            })
+
+            $('#addComment1').click(function () {
+                let comment = $('#comment1').val()
+                $('#output').append(comment + '<br>');
+            })
+
+            $('#addImageComment').click(function () {
+                let comment = $('#comment2').val()
+                $('#output').append('<img src="img/red.png">' + comment + '<br>');
+            })
+
+        })
+    </script>
+</head>
+
+<body>
+    <button id="addImage">이미지 추가</button>
+    <br>
+    <input type="text" id="comment1" placeholder="댓글1">
+    <button id="addComment1">댓글 추가</button>
+    <br>
+    <input type="text" id="comment2" placeholder="댓글2">
+    <button id="addImageComment">이미지+댓글 추가</button>
+    <div id="output">
+    </div>
+</body>
+
+</html>

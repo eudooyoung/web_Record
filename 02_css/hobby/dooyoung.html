@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>김두영 취미 소개</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      background-color: darkslategrey;
+    }
+
+    #top2 {
+      background-color: darkolivegreen;
+      border-radius: 100px 100px;
+      width: 80px;
+      height: 80px;
+      position: sticky;
+      bottom: 0px;
+      right: 5px;
+      display: flex;
+      align-items: center;
+      /* 수직 방향 중앙 정렬 */
+      justify-content: center;
+      /* 수평 방향 중앙 정렬 */
+      font-size: 20px; 
+      /* text-decoration: none !important; */
+    }
+
+    #test {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+    }
+
+    #menu {
+      top: 0px;
+      position: sticky;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="menu">
+    <div class="container">
+      <!-- <a class="navbar-brand" href="#">목차</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> -->
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#top">처음</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#workout">운동</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#game">게임</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="text-bg-secondary p-3">
+
+    <div id="top">
+      <h1>안녕하세요 취미입니다</h1>
+      <br>
+
+      <div id="workout">
+        <p>운동</p>
+        <img src="턱걸이.jpg" width="600" height="400">
+        <p>턱걸이<br>
+        *어깨운동*</p>
+        <img src="로잉.jpg" width="600" height="400">
+        <p>로잉머신<br>
+        *다리운동*</p>
+      </div>
+
+      <br>
+
+      <div id="game">
+        <p>게임</p>
+        <img src="poe.jpg" width="600" height="400">
+        <p>패스오브엑자일<br>
+        *핵엔슬래시명작*</p>
+        <img src="over.png" width="600" height="400">
+        <p>오버워치<br>
+        *역고골드*</p>
+      </div>
+
+    </div>
+
+    <div id="top2">
+      <a href="#top" id="test">위로</a>
+    </div>
+
+  </div>
+</body>
+
+</html>

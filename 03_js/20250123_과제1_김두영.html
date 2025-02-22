@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<script>
+    function pay() {
+        let store = document.getElementById('store').value
+        let total = parseInt(document.getElementById('total').value)
+        let means = document.getElementById('means').value
+        if (means == 1) {
+            result.innerHTML = store + '에서 ' + total + '원 계좌이체로 구매하셨습니다.'
+        } else if (means == 2) {
+            result.innerHTML = store + '에서 ' + (total + 1000) + '원 계좌이체로 구매하셨습니다.'
+        } else if (means == 3) {
+            result.innerHTML = store + '에서 ' + (total + 500) + '원 계좌이체로 구매하셨습니다.'
+        }
+    }
+
+</script>
+
+<body>
+    <hr color="red">
+    <p>구매상점: <input type="text" id="store"> </p>
+    <p>결제금액: <input type="text" id="total"> </p>
+    <p>입력수단(1)계좌이체, (2)신용카드, (3)휴대폰결제</p>
+    <input type="number" id="means">
+    <br>
+    <button onclick="pay()">결제 버튼</button>
+    <br>
+    <hr color="blue">
+
+    <div id="result"></div>
+
+</body>
+
+</html>

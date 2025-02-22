@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>과제</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script><!-- cdn -->
+    <script>
+
+        $(function () {
+            $('#addComment').click(function () {
+                let comment = $('#comment').val()
+                if (!comment) {
+                    alert('내용을 입력하세요')
+                    return;
+                } else {
+                    $('#output1').append('<p>' + comment + '</p>');
+                    $('#comment').val('')
+                }
+            })
+
+            $('#addImage').click(function () {
+                let point = $('#star').val()
+                if (!point) {
+                    alert('별점을 입력하세요')
+                    return;
+                } else {
+                    point = parseInt(point)
+                    if (point == 0) {
+                        $('#output2').append('<p><img src="img/0.jpg" width="150" height="20"></p>');
+                        $('#star').val('')
+                    } else if (point == 1) {
+                        $('#output2').append('<p><img src="img/1.jpg" width="150" height="20"></p>');
+                        $('#star').val('')
+                    } else if (point == 2) {
+                        $('#output2').append('<p><img src="img/2.jpg" width="150" height="20"></p>');
+                        $('#star').val('')
+                    }
+                    else if (point == 3) {
+                        $('#output2').append('<p><img src="img/3.jpg" width="150" height="20"></p>');
+                        $('#star').val('')
+                    }
+                    else if (point == 4) {
+                        $('#output2').append('<p><img src="img/4.jpg" width="150" height="20"></p>');
+                        $('#star').val('')
+                    } else if (point == 5) {
+                        $('#output2').append('<p><img src="img/5.jpg" width="150" height="20"></p>');
+                        $('#star').val('')
+                    }
+                }
+
+
+            })
+
+
+        })
+
+    </script>
+    <style>
+        .outter {
+            /* display: inline-block; */
+            float: inline-start;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="outter">
+        <button id="addComment">CGV 피카디리1958의 리뷰를 남기시려면 클릭하세요</button>
+        <div id="map1" style="width:450px; height:350px;"></div>
+        <div class="output" id="output1"><input type="text" id="comment" style="width:400px;" maxlength="25"
+                placeholder="리뷰를 25자 내로 입력해 주세요">
+        </div>
+    </div>
+
+    <div class="outter">
+        <button id="addImage">에스프레소코어의 별점을 매기려면 클릭하세요</button>
+        <div id="map2" style="width:450px; height:350px;"></div>
+        <div class="output" id="output2"><input type="number" id="star" style="width:150px;" min="0" max="5"
+                placeholder="별점 수를 입력하세요"></div>
+    </div>
+
+    <script type="text/javascript"
+        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e8259d9a2445b7e518c24b87acafb0cb&libraries=services"></script>
+    <script>
+        {
+            let mapContainer = document.getElementById('map1'), // 지도를 표시할 div 
+                mapOption = {
+                    center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+                    level: 2 // 지도의 확대 레벨
+                };
+
+            // 지도를 생성합니다    
+            let map = new kakao.maps.Map(mapContainer, mapOption);
+
+            // 주소-좌표 변환 객체를 생성합니다
+            let geocoder = new kakao.maps.services.Geocoder();
+
+            // 주소로 좌표를 검색합니다
+            geocoder.addressSearch('서울 종로구 돈화문로5가길 1 지하2층', function (result, status) {
+
+                // 정상적으로 검색이 완료됐으면 
+                if (status === kakao.maps.services.Status.OK) {
+
+                    let coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+
+                    // 결과값으로 받은 위치를 마커로 표시합니다
+                    let marker = new kakao.maps.Marker({
+                        map: map,
+                        position: coords
+                    });
+
+                    // 인포윈도우로 장소에 대한 설명을 표시합니다
+                    let infowindow = new kakao.maps.InfoWindow({
+                        content: '<div style="width:150px;text-align:center;padding:6px 0;strong"><b>CGV 피카디리1958</b></div>'
+                    });
+                    infowindow.open(map, marker);
+
+                    // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+                    map.setCenter(coords);
+                }
+            });
+
+        }
+    </script>
+
+    <script>
+        {
+            let mapContainer = document.getElementById('map2'), // 지도를 표시할 div 
+                mapOption = {
+                    center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+                    level: 1 // 지도의 확대 레벨
+                };
+
+            // 지도를 생성합니다    
+            let map = new kakao.maps.Map(mapContainer, mapOption);
+
+            // 주소-좌표 변환 객체를 생성합니다
+            let geocoder = new kakao.maps.services.Geocoder();
+
+            // 주소로 좌표를 검색합니다
+            geocoder.addressSearch('서울 용산구 대사관로31길 7-6 1층', function (result, status) {
+
+                // 정상적으로 검색이 완료됐으면 
+                if (status === kakao.maps.services.Status.OK) {
+
+                    let coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+
+                    // 결과값으로 받은 위치를 마커로 표시합니다
+                    let marker = new kakao.maps.Marker({
+                        map: map,
+                        position: coords
+                    });
+
+                    // 인포윈도우로 장소에 대한 설명을 표시합니다
+                    let infowindow = new kakao.maps.InfoWindow({
+                        content: '<div style="width:150px;text-align:center;padding:6px 0;strong"><b>에스프레소코어</b></div>'
+                    });
+                    infowindow.open(map, marker);
+
+                    // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+                    map.setCenter(coords);
+                }
+            });
+
+        }
+    </script>
+</body>
+
+</html>

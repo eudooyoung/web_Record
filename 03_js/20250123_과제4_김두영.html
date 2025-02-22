@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.
+        {
+            let place = prompt('당신은 어디로 가고 싶나요?(산, 바다, 강 중 선택)')
+            if (place == '산') {
+                alert('당신은 ' + place + '을 선택하셨군요!! 한라산을 가볼까요?')
+                location.href = 'https://jeju.go.kr/hallasan/index.htm'
+            } else if (place == '바다') {
+                alert('당신은 ' + place + '를 선택하셨군요!! 해운대를 가볼까요?')
+                location.href = 'https://www.haeundae.go.kr/tour/index.do?menuCd=DOM_000000302001000000'
+            } else if (place == '강') {
+                alert('당신은 ' + place + '을 선택하셨군요!! 소양강을 가볼까요?')
+                location.href = 'http://tour.chuncheon.go.kr/contents.do?cid=11c74a6d47754a2cbb8a31329aca644f&categoryId=1&sdbSeq=651'
+            } else {
+                alert('당신은 집에 있고 싶으시군요!')
+            }
+        }
+        //  2.
+        {
+            let login = prompt('사용자 아이디를 입력해 주세요.')
+            if(login == 'admin') {
+                alert('브라우저에 관리자로 로그인 되었습니다.')
+            } else {
+                alert('브라우저에 일반 유저로 로그인 되었습니다.')
+            }
+        }
+    </script>
+</body>
+
+</html>
